@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,14 +10,15 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     private int score = 0;
     public int health = 5;
+    public Text scoreText;
 
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Pickup")
         {
             score += 1;
-            Debug.Log($"Score: {score}");
             Destroy(other.gameObject);
+            SetScoreText();
         }
     if (other.tag == "Trap")
     {
@@ -49,4 +51,9 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
     }
+    void SetScoreText()
+    {
+        scoreText.text =  $"Score: " + score;
+    }       
+    
 }
