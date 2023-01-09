@@ -6272,6 +6272,7 @@ MonoBehaviour:
   rb: {fileID: 1692524750}
   health: 5
   scoreText: {fileID: 561545314}
+  healthText: {fileID: 320669086}
 --- !u!54 &1692524750
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7045,7 +7046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

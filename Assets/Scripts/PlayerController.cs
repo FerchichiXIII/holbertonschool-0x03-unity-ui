@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private int score = 0;
     public int health = 5;
     public Text scoreText;
+    public Text healthText;
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,7 +24,8 @@ public class PlayerController : MonoBehaviour
     if (other.tag == "Trap")
     {
         health --;
-        Debug.Log($"Health: {health}");
+        //Debug.Log($"Health: {health}");
+        SetHealthText();
     }
     if (other.tag == "Goal")
     {
@@ -54,7 +56,11 @@ public class PlayerController : MonoBehaviour
     }
     void SetScoreText()
     {
-        scoreText.text =  $"Score: " + score;
-    }       
+        scoreText.text =  "Score: " + score;
+    }
+    void SetHealthText()
+    {
+        healthText.text = "Health: " + health;
+    }
     
 }
