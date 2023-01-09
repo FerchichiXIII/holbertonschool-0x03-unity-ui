@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public int health = 5;
     public Text scoreText;
     public Text healthText;
+    public Text WinLoseText;
+    public Image WinLoseImage;
+    public GameObject win;
 
     void OnTriggerEnter(Collider other)
     {
@@ -29,7 +32,12 @@ public class PlayerController : MonoBehaviour
     }
     if (other.tag == "Goal")
     {
-        Debug.Log("You win!");
+        //Debug.Log("You win!");
+        WinLoseText.color = Color.black;
+        WinLoseImage.color = Color.green;
+        WinLoseText.text = "You win!";
+        win.SetActive(true);
+
     }
 
 
