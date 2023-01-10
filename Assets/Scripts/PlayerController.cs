@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Text WinLoseText;
     public Image WinLoseImage;
     public GameObject win;
+    public GameObject over;
 
     void OnTriggerEnter(Collider other)
     {
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         health --;
         //Debug.Log($"Health: {health}");
+
         SetHealthText();
     }
     if (other.tag == "Goal")
@@ -39,7 +41,6 @@ public class PlayerController : MonoBehaviour
         win.SetActive(true);
 
     }
-
 
     }
     void Start()
@@ -58,8 +59,13 @@ public class PlayerController : MonoBehaviour
     {
         if (health == 0)
         {
-            Debug.Log("Game Over!");
+            //Debug.Log("Game Over!");
             SceneManager.LoadScene(0, LoadSceneMode.Single);
+            WinLoseText.color = Color.white;
+            WinLoseImage.color = Color.red;
+            WinLoseText.text = "Game Over!";
+            over.SetActive(true);
+
         }
     }
     void SetScoreText()
