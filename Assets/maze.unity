@@ -6432,7 +6432,7 @@ MonoBehaviour:
   WinLoseText: {fileID: 782860608}
   WinLoseImage: {fileID: 376415175}
   win: {fileID: 376415173}
-  over: {fileID: 0}
+  over: {fileID: 376415173}
 --- !u!54 &1692524750
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -39,8 +39,10 @@ public class PlayerController : MonoBehaviour
         WinLoseImage.color = Color.green;
         WinLoseText.text = "You win!";
         win.SetActive(true);
+        StartCoroutine(LoadScene(3));
 
     }
+
 
     }
     void Start()
@@ -60,11 +62,11 @@ public class PlayerController : MonoBehaviour
         if (health == 0)
         {
             //Debug.Log("Game Over!");
-            SceneManager.LoadScene(0, LoadSceneMode.Single);
             WinLoseText.color = Color.white;
             WinLoseImage.color = Color.red;
             WinLoseText.text = "Game Over!";
             over.SetActive(true);
+            StartCoroutine(LoadScene(3));
 
         }
     }
@@ -76,5 +78,11 @@ public class PlayerController : MonoBehaviour
     {
         healthText.text = "Health: " + health;
     }
-    
+    IEnumerator LoadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene("Maze");
+        score = 0;
+        health = 5;
+    }
 }
