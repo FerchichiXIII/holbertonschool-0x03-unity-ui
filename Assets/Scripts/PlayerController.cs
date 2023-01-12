@@ -42,8 +42,6 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(LoadScene(3));
 
     }
-
-
     }
     void Start()
     {
