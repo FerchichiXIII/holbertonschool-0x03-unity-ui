@@ -6,9 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public Material trapMat;
+    public Material goalMat;
+    public Toggle colorblindMode;
+
     public void PlayMaze()
     {
-        SceneManager.LoadScene("maze");
+        if (colorblindMode.isOn)
+        {
+            goalMat.color = Color.blue;
+            trapMat.color = new Color32(255, 112, 0, 1); 
+        }
+        else
+        {
+            goalMat.color = Color.green;
+            trapMat.color = Color.red;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void QuitMaze()
     {
